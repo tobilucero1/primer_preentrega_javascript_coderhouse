@@ -34,7 +34,7 @@ if (nombreEmprendimiento == "") {
 
 
 
-    let palabraClave= prompt("Ingresa 'ANUAL' o 'MENSUAL'. porfavor, escribalo todo en MAYUSCULA.");
+    let palabraClave= prompt("Ingresa 'ANUAL' o 'MENSUAL'. porfavor, escribalo todo en MAYUSCULA.".toUpperCase());
     if (palabraClave == ""){
         console.log("Error. Ingresa 'ANUAL' o 'MENSUAL'. porfavor, escribalo todo en MAYUSCULA ");
     }else
@@ -50,12 +50,5 @@ if (nombreEmprendimiento == "") {
 }
 
 
-
-
-
-
-//let gananciasBrutas= prompt("Ingresa la ganancia bruta del mes del que quieras saber(En el caso que quieras saber tu ganancia neta anual, ingresa tu ganancia bruta anual) " )
-
-//let gastos= prompt("Ingresa tus gastos ")
 
 
