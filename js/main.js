@@ -73,7 +73,7 @@ const arrayArt = [
             if (cantidad <= arrayArt[opcion-1].stock){
                 console.log("Este producto cuesta: $ " + arrayArt[opcion-1].precio );
                 total += (cantidad * arrayArt[opcion-1].precio);
-                console.log("El valor de su compra es de $" + total);
+                console.log("El total de su compra es de $" + total);
                 }
             break;
     
@@ -81,7 +81,7 @@ const arrayArt = [
             if (cantidad <= arrayArt[opcion-1].stock){
                 console.log("Este producto cuesta: $ " + arrayArt[opcion-1].precio );
                 total += (cantidad * arrayArt[opcion-1].precio);
-                console.log("El valor de su compra es de $" + total);
+                console.log("El total de su compra es de $" + total);
                 }
             break;
 
@@ -89,7 +89,7 @@ const arrayArt = [
                 if (cantidad <= arrayArt[opcion-1].stock){
                     console.log("Este producto cuesta: $ " + arrayArt[opcion-1].precio );
                     total += (cantidad * arrayArt[opcion-1].precio);
-                    console.log("El valor de su compra es de $" + total);
+                    console.log("El total de su compra es de $" + total);
                     }
                 break;
     
@@ -99,4 +99,4 @@ const arrayArt = [
     }
     opcion = prompt("Elige el articulo que deseas comprar: \n1-Buzo 1 \n2-Buzo 2 \n3-Buzo 3 \n4-Buzo 4 \n5-Buzo 5 \n0 para salir")
     }
-    alert("el total es de: " + total)
+    console.log("el total es de: " + total)
