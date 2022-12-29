@@ -24,31 +24,79 @@ function ingreso() {
 
 console.log(ingreso());
 
-let nombreEmprendimiento= prompt("Ingresa el nombre de tu emprendimiento, porfavor");
-
-if (nombreEmprendimiento == "") {
-    console.log("No ingresaste nada, ingresa el nombre de tu emprendimiento para poder continuar");
+const arrayArt = [
+    { art: 1, nombre: "Buzo 1", precio: 10000,stock: 25},
+    { art: 2, nombre: "Buzo 2", precio: 12500,stock: 20},
+    { art: 3, nombre: "Buzo 3", precio: 15000,stock: 20},
+    { art: 4, nombre: "Buzo 4", precio: 18000,stock: 30}
+    ];
     
-}else{
-    console.log("Perfecto! Ahora indicanos si quieres averiguar tu ganancia neta anual, escriibiendo la palabra clave 'ANUAL' o escirbe la palabra clave 'MENSUAL' en el caso de que quieras saber la ganancia neta de solo un mes");
+    function Producto(art, nombre, precio, stock){
+        this.art = art;
+        this.nombre = nombre;
+        this.precio = Number(precio);
+        this.stock = Number(stock);
+    }
+    
+    const articulo= new Producto (5,"Buzo 5", 20000, 15)
+    arrayArt.push(articulo)
+    
+    arrayArt.forEach ((numero) => {
+      console.log(numero.nombre)});
+    
+    let opcion = prompt("Elige el articulo que deseas comprar: \n1-Buzo 1 \n2-Buzo 2 \n3-Buzo 3 \n4-Buzo 4 \n5-Buzo 5 \n0 para salir")
+    
+    while (opcion != 0){
+    
+        cantidad = prompt("Cuantas unidades de este producto quiere comprar?")
+    
+        switch (opcion){
+          case "1":           
+            if (cantidad <= arrayArt[opcion-1].stock){
+              console.log("Este producto cuesta: $ " + arrayArt[opcion-1].precio );
+              total = (cantidad * arrayArt[opcion-1].precio);
+              console.log("El total de su compra es de $ " + total);
+            }
+            break;
+    
+    
+        case "2":
+          if (cantidad <= arrayArt[opcion-1].stock){
+            console.log("Este producto cuesta: $ " + arrayArt[opcion-1].precio );
+            total += (cantidad * arrayArt[opcion-1].precio);
+            console.log("El total de su compra es de $" + total);
+            }
+            break;
+    
+    
+        case "3":
+            if (cantidad <= arrayArt[opcion-1].stock){
+                console.log("Este producto cuesta: $ " + arrayArt[opcion-1].precio );
+                total += (cantidad * arrayArt[opcion-1].precio);
+                console.log("El valor de su compra es de $" + total);
+                }
+            break;
+    
+        case "4":
+            if (cantidad <= arrayArt[opcion-1].stock){
+                console.log("Este producto cuesta: $ " + arrayArt[opcion-1].precio );
+                total += (cantidad * arrayArt[opcion-1].precio);
+                console.log("El valor de su compra es de $" + total);
+                }
+            break;
 
-
-
-    let palabraClave= prompt("Ingresa 'ANUAL' o 'MENSUAL'. porfavor, escribalo todo en MAYUSCULA.".toUpperCase());
-    if (palabraClave == ""){
-        console.log("Error. Ingresa 'ANUAL' o 'MENSUAL'. porfavor, escribalo todo en MAYUSCULA ");
-    }else
-        if(palabraClave === "ANUAL" || palabraClave === "MENSUAL"){
-            gananciasBrutas=parseFloat(prompt("Ingresa la ganancia bruta del año o mes del que quieras saber tu ganacia neta"));
-            gastos=parseFloat(prompt("ingresa los gastos anuales o mensuales de dicho año/mes"));
-            gananciaNeta = gananciasBrutas - gastos 
-            alert( "Tu ganancia neta es de "+ gananciaNeta)
-
-        }else{
-            console.log("error");
-        }
-}
-
-
-
-
+            case "5":
+                if (cantidad <= arrayArt[opcion-1].stock){
+                    console.log("Este producto cuesta: $ " + arrayArt[opcion-1].precio );
+                    total += (cantidad * arrayArt[opcion-1].precio);
+                    console.log("El valor de su compra es de $" + total);
+                    }
+                break;
+    
+        default:
+           opcion = prompt("Opcion no Valida presione boton Salir")
+        break;
+    }
+    opcion = prompt("Elige el articulo que deseas comprar: \n1-Buzo 1 \n2-Buzo 2 \n3-Buzo 3 \n4-Buzo 4 \n5-Buzo 5 \n0 para salir")
+    }
+    alert("el total es de: " + total)
